@@ -1,0 +1,162 @@
+<!-- Static: The element's default position value. It follows the document's usual flow and is unaffected by the top, right, bottom, or left characteristics.
+The z-index has no effect on elements with static position. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Static Position Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* default position value (static) */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Static</div>
+</body>
+
+</html>
+
+
+
+
+
+<!-- Fixed: The element is positioned relative to the viewport, so it remains in place even when the page is scrolled.
+This is useful for designing fixed navigation bars or items that must be visible at all times. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fixed Position Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: fixed;
+            top: 50px;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Fixed</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec dui nec massa dignissim elementum.</p>
+</body>
+
+</html>
+
+
+
+
+
+<!-- Sticky: The element is positioned based on the user's scroll position, but it behaves like position: relative until a
+certain threshold is reached. It becomes fixed after the user scrolls past the threshold.
+This is useful for elements that need to be temporarily fixed but will return to their original place when the user
+scrolls back up. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sticky Position Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: sticky;
+            top: 20px;
+        }
+
+        p {
+            height: 2000px;
+            /* Add some height to the content to enable scrolling */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Sticky</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec dui nec massa dignissim elementum.</p>
+</body>
+
+</html>
+
+
+
+
+<!-- Relative: The element is positioned relative to its regular location. It can be moved by using the properties top,
+right, bottom, or left.
+When shifted, elements with position: relative do not leave a break in the document flow. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Relative Position Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: relative;
+            top: 20px;
+            left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Relative</div>
+</body>
+
+</html>
+
+
+
+<!-- Absolute: The element is positioned relative to its nearest positioned ancestor (an ancestor with a position value other
+than static) or, if no positioned ancestor is detected, to the containing block.
+components that are absolutely positioned are removed from the usual flow of the document, while other components ignore
+the space they would have occupied. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Absolute Position Example</title>
+    <style>
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Absolute</div>
+    </div>
+</body>
+
+</html>

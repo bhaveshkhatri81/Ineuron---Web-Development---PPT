@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Form with Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Basic Form with Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" max="99" required>
+        </div>
+
+        <div>
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div>
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color" required>
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Custom validation for phone number (optional)
+            var phoneInput = document.getElementById("phone");
+            var phonePattern = /[0-9]{10}/;
+            if (!phonePattern.test(phoneInput.value)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            // Custom validation for password (optional)
+            var passwordInput = document.getElementById("password");
+            if (passwordInput.value.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+
+            // Custom validation for age (optional)
+            var ageInput = document.getElementById("age");
+            var age = parseInt(ageInput.value);
+            if (age < 18 || age > 99) {
+                alert("Age must be between 18 and 99.");
+                return false;
+            }
+
+            // Additional custom validation can be added as needed.
+
+            // If all validations pass, the form will be submitted.
+            return true;
+        }
+    </script>
+</body>
+
+</html>
